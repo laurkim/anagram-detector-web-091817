@@ -9,11 +9,11 @@ class Anagram
   end
 
   def match(anagrams)
-    anagrams.collect do |anagram|
+    anagrams.select do |anagram|
       anagram_array = anagram.split("").sort
       word_array = self.word.split("").sort
-      anagram_array == word_array ? anagram : []
-    end.flatten
+      anagram_array == word_array
+    end
   end
 
 end
